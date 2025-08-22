@@ -10,7 +10,6 @@ type Props = {
 export default function Nav({ title, href, icon }: Props) {
   return (
     <Link
-      key={href}
       href={href}
       className={`
             flex items-center gap-1 min-w-fit px-2 py-1
