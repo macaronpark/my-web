@@ -1,10 +1,15 @@
 # my-web
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+개인 웹사이트입니다.
 
-## Getting Started
+## 기술 스택
 
-First, run the development server:
+- next.js
+- TypeScript
+- TailwindCSS
+- vercel
+
+## 시작하기
 
 ```bash
 corepack enable
