@@ -1,26 +1,14 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-windows-title: var(--color-blue-800);
+  --color-windows-content: var(--color-gray-300);
+  --color-windows-content-hover: var(--color-gray-200);
+  --color-windows-border-light: var(--color-white);
+  --color-windows-border-dark: var(--color-gray-600);
+  --inset-shadow-windows: inset -2px -2px rgba(0 0 0 / 0.2);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("/sky-tile.gif");
 }
