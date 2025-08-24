@@ -28,7 +28,7 @@ export default function NotFound() {
             />
             <div>
               <h3 className='font-bold text-xl'>404 Not Found</h3>
-              <p>Could not find requested resource</p>
+              <p>요청한 페이지를 찾을 수 없습니다.</p>
             </div>
           </div>
           <Link
@@ -43,7 +43,9 @@ export default function NotFound() {
                 inset-shadow-windows
               `}
           >
-            <div className='rounded-sm border-2 border-dotted'>Return Home</div>
+            <div className='rounded-sm border-2 border-dotted'>
+              홈으로 돌아가기
+            </div>
           </Link>
         </div>
       </article>
