@@ -5,8 +5,8 @@ import Nav from "./Nav";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Suzy Park's web",
-  description: "Welcome to Suzy Park's web.",
+  title: "박수지",
+  description: "박수지의 웹에 오신걸 환영합니다.",
 };
 
 const notoSansKR = Noto_Sans_KR({
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='ko'>
       <body
         className={`${notoSansKR.variable} antialiased flex justify-center`}
       >
