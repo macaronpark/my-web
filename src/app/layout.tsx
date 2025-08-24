@@ -15,11 +15,10 @@ const notoSansKR = Noto_Sans_KR({
 });
 
 const links = [
-  { title: "Home", href: "/", icon: "/home.png" },
-  { title: "Portfolio", href: "/portfolio", icon: "/portfolio.png" },
-  { title: "Blog", href: "/blog", icon: "/blog.png" },
-  { title: "Shrine", href: "/shrine", icon: "/shrine.png" },
-  { title: "Gallery", href: "/gallery", icon: "/gallery.png" },
+  { title: "홈", href: "/", icon: "/home.png" },
+  { title: "프로젝트", href: "/project", icon: "/project.png" },
+  { title: "성전", href: "/shrine", icon: "/shrine.png" },
+  { title: "갤러리", href: "/gallery", icon: "/gallery.png" },
 ];
 
 export default function RootLayout({
