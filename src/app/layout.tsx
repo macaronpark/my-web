@@ -28,10 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ko'>
-      <body
-        className={`${notoSansKR.variable} antialiased flex justify-center`}
-      >
-        <header className='flex flex-col items-center w-full h-svh'>
+      <body className={`${notoSansKR.variable} antialiased min-h-svh`}>
+        <header className='flex flex-col items-center'>
           <NavBar>
             {links.map((link) => (
               <Nav
@@ -42,8 +40,8 @@ export default function RootLayout({
               />
             ))}
           </NavBar>
-          <div className='flex h-full p-2 max-w-screen-lg'>{children}</div>
         </header>
+        {children}
       </body>
     </html>
   );
