@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className='flex flex-col items-center gap-3 p-2'>
+    <main className='flex flex-col items-center gap-3 p-2'>
       <h1>suzypark.dev에 오신걸 환영합니다!</h1>
       <IntroductionBanner />
       🏗️🚧 홈 - 공사 중 🚧🏗️
       <div>기술스택</div>
       <div>경험</div>
       <div>프로젝트</div>
-    </div>
+    </main>
   );
 }
 
@@ -25,11 +25,11 @@ const IntroductionBanner = () => {
   };
 
   return (
-    <article className='grid grid-cols-[5fr_1fr] bg-[#990099] w-full max-w-lg drop-shadow-lg'>
+    <section className='grid grid-cols-[5fr_1fr] bg-[#990099] w-full max-w-lg drop-shadow-lg'>
       <div className='flex flex-col items-center p-2'>
-        <h1 className='font-extrabold text-xl text-[#2DFF00] text-shadow-sm text-shadow-gray-700'>
+        <h2 className='font-extrabold text-xl text-[#2DFF00] text-shadow-sm text-shadow-gray-700'>
           {contents.title}
-        </h1>
+        </h2>
         <p className='text-white text-sm'>{contents.subTitle}</p>
         <p className='bg-gray-900 font-bold text-white text-md mt-0.5 px-4 w-fit'>
           {contents.description}
@@ -44,6 +44,6 @@ const IntroductionBanner = () => {
           className='mt-3'
         />
       </div>
-    </article>
+    </section>
   );
 };
