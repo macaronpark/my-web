@@ -16,8 +16,8 @@ export const introduction = {
     alt: "천천히 걸어오는 북극곰",
   },
   github: "https://github.com/macaronpark",
-  gmail: process.env.NEXT_PUBLIC_MAIL_ADDRESS ?? "",
-  phone: process.env.NEXT_PUBLIC_PHONE_NUMBER ?? "",
+  email: process.env.NEXT_PUBLIC_EMAIL ?? "",
+  phone: process.env.NEXT_PUBLIC_PHONE ?? "",
   address: "대전광역시",
 } satisfies Readonly<Introduction>;
 

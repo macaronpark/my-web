@@ -12,7 +12,7 @@ export type Introduction = {
     alt: string;
   };
   github: string;
-  gmail: string;
+  email: string;
   phone: string;
   address: string;
 };
