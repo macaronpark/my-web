@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import NavBar from "@/app/NavBar";
-import Nav from "./Nav";
+import Nav from "@/app/Nav";
+import { links } from "./data";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
@@ -10,16 +11,9 @@ export const metadata: Metadata = {
 };
 
 const notoSansKR = Noto_Sans_KR({
-  variable: "--font-noto-sans-kr",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "900"],
 });
-
-const links = [
-  { title: "홈", href: "/", icon: "/home.png" },
-  { title: "프로젝트", href: "/project", icon: "/project.png" },
-  { title: "성전", href: "/shrine", icon: "/shrine.png" },
-  { title: "갤러리", href: "/gallery", icon: "/gallery.png" },
-];
 
 export default function RootLayout({
   children,
@@ -27,17 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='ko'>
-      <body className={`${notoSansKR.variable} antialiased min-h-svh`}>
-        <header className='flex flex-col items-center'>
+    <html lang="ko">
+      <body className={`${notoSansKR.className} antialiased min-h-svh`}>
+        <header className="flex flex-col items-center sticky top-0 z-10">
           <NavBar>
             {links.map((link) => (
-              <Nav
-                key={link.href}
-                title={link.title}
-                href={link.href}
-                icon={link.icon}
-              />
+              <Nav key={link.href} {...link} />
             ))}
           </NavBar>
         </header>

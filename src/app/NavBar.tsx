@@ -8,11 +8,8 @@ export default function NavBar({ children }: Props) {
   return (
     <nav
       className={`
-        flex flex-wrap justify-center gap-0.5 w-full p-0.5 
-        bg-windows-content
-        border-t-2 border-b-2
-        border-t-windows-border-light
-        border-b-windows-border-dark
+        flex flex-wrap justify-start gap-0.5 w-full px-1 py-0.5 
+        bg-win95-lightgray bevel-raised border-l-0 border-r-0
       `}
     >
       {children}
