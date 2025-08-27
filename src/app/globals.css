@@ -1,14 +1,58 @@
 @import "tailwindcss";
 
-@theme {
-  --color-windows-title: var(--color-blue-800);
-  --color-windows-content: var(--color-gray-300);
-  --color-windows-content-hover: var(--color-gray-200);
-  --color-windows-border-light: var(--color-white);
-  --color-windows-border-dark: var(--color-gray-500);
-  --inset-shadow-windows: inset -2px -2px rgba(0 0 0 / 0.2);
-}
-
 body {
   background-image: url("/sky-tile.gif");
+
+  /* 한국어 문장을 단어 단위로 줄바꿈 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+@theme {
+  --color-win95-blue: var(--color-blue-800);
+  --color-win95-lightgray: var(--color-gray-300);
+  --color-win95-lightgray-hover: var(--color-gray-200);
+  --color-win95-border-light: var(--color-gray-50);
+  --color-win95-border-dark: var(--color-gray-500);
+}
+
+@utility bevel-raised {
+  border-width: 2px;
+  border-style: solid;
+  border-left-color: var(--color-win95-border-light);
+  border-top-color: var(--color-win95-border-light);
+  border-right-color: var(--color-win95-border-dark);
+  border-bottom-color: var(--color-win95-border-dark);
+}
+@utility bevel-sunken {
+  border-width: 2px;
+  border-style: solid;
+  border-left-color: var(--color-win95-border-dark);
+  border-top-color: var(--color-win95-border-dark);
+  border-right-color: var(--color-win95-border-light);
+  border-bottom-color: var(--color-win95-border-light);
+}
+
+@layer components {
+  .win95-nav {
+    @apply min-w-fit px-2 py-0.5 text-sm 
+            bg-win95-lightgray hover:bg-win95-lightgray-hover
+            bevel-raised inset-shadow-[-2px_-2px_rgba(0,0,0,0.15)];
+  }
+  .win95-nav-current {
+    @apply min-w-fit px-2 py-0.5 text-sm 
+            bg-win95-lightgray hover:bg-win95-lightgray-hover
+            bevel-sunken inset-shadow-[2px_2px_rgba(0,0,0,0.125)] brightness-95;
+  }
+  .win95-panel-frame {
+    @apply font-semibold text-sm bg-win95-lightgray 
+            bevel-raised inset-shadow-[-2px_-2px_rgba(0,0,0,0.15)];
+  }
+  .win95-panel-title {
+    @apply px-2 py-0.5 bg-win95-blue text-white;
+  }
+  .win95-panel-body {
+    @apply m-0.5 p-2 bg-white;
+  }
 }
