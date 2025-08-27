@@ -69,11 +69,9 @@ const InfoLinkList = ({
 
 const InfoLink = ({ label, href }: { label: string; href: string }) => {
   return (
-    <>
-      <a target="_blank" href={href} className="text-[#0000ee] underline">
-        {label}
-      </a>
+    <a target="_blank" rel="noopener noreferrer" href={href}>
+      <span className="text-[#0000ee] underline">{label}</span>
       <span> | </span>
-    </>
+    </a>
   );
 };
