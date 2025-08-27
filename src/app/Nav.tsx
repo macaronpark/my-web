@@ -4,34 +4,47 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { links } from "./data";
 
-type Props = {
-  title: string;
-  href: string;
-  icon: string;
-};
+type Nav = (typeof links)[number];
 
-export default function Nav({ title, href, icon }: Props) {
-  const isCurrent = usePathname() === href;
+export default function Nav({ title, href, src }: Nav) {
+  const cn = getClassName({ isCurrent: usePathname() === href });
+
+  if (title === "홈") {
+    return <HomeNav title={title} href={href} src={src} cn={cn} />;
+  }
 
   return (
-    <Link
-      href={href}
-      className={clsx(
-        "flex items-center gap-1 min-w-fit px-2 py-1 bg-windows-content hover:bg-windows-content-hover border-2 border-windows-border-dark",
-        isCurrent
-          ? "border-b-windows-border-light border-r-windows-border-light inset-shadow-[2px_2px_rgba(0,0,0,0.125)] brightness-92"
-          : "border-t-windows-border-light border-l-windows-border-light inset-shadow-windows"
-      )}
-    >
-      <Image
-        src={icon}
-        width={20}
-        height={20}
-        alt={title + " icon"}
-        className='size-5'
-      />
+    <Link href={href} className={cn}>
+      <NavImage src={src} title={title} />
       {title}
     </Link>
   );
 }
+
+const getClassName = ({ isCurrent }: { isCurrent: boolean }) => {
+  return clsx("flex items-center gap-1", isCurrent ? "win95-nav-current" : "win95-nav");
+};
+
+const HomeNav = ({ title, href, src, cn }: Nav & { cn: string }) => {
+  return (
+    <>
+      <Link href={href} className={clsx(cn, "font-semibold")}>
+        <NavImage src={src} title={title} />
+        {title}
+      </Link>
+      <HomeNavDivider />
+    </>
+  );
+};
+
+const HomeNavDivider = () => {
+  return (
+    <div className="w-1 m-0.5 border-2 border-gray-400 border-l-win95-border-light border-t-win95-border-light" />
+  );
+};
+
+const NavImage = ({ src, title }: Pick<Nav, "src" | "title">) => {
+  return <Image src={src} width={20} height={20} alt={title} className="size-5" />;
+};
