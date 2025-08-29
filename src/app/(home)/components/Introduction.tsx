@@ -1,9 +1,9 @@
-import Image from "next/image";
-import type { Introduction } from "../type";
+import Image from 'next/image';
+import type { Introduction } from '../type';
 
 export default function Introduction({ contents }: { contents: Introduction }) {
   return (
-    <section className="flex flex-col items-center w-full max-w-xl">
+    <section className="flex w-full max-w-xl flex-col items-center">
       <Banner
         title={contents.title}
         subTitle={contents.subTitle}
@@ -25,23 +25,25 @@ const Banner = ({
   subTitle,
   description,
   image,
-}: Pick<Introduction, "title" | "subTitle" | "description" | "image">) => {
+}: Pick<Introduction, 'title' | 'subTitle' | 'description' | 'image'>) => {
   return (
-    <div className="w-full grid grid-cols-[5fr_1fr] bg-[#990099] drop-shadow-lg text-center">
+    <div className="grid w-full grid-cols-[5fr_1fr] bg-[#990099] text-center drop-shadow-lg">
       <div className="flex flex-col items-center p-2">
-        <h2 className="font-extrabold text-2xl text-[#2DFF00] text-shadow-sm text-shadow-gray-700">
+        <h2 className="text-2xl font-extrabold text-[#2DFF00] text-shadow-gray-700 text-shadow-sm">
           {title}
         </h2>
-        <p className="text-white text-sm">{subTitle}</p>
-        <p className="bg-gray-900 font-bold text-md text-white mt-1 px-4 w-fit">{description}</p>
+        <p className="text-sm text-white">{subTitle}</p>
+        <p className="text-md mt-1 w-fit bg-gray-900 px-4 font-bold text-white">
+          {description}
+        </p>
       </div>
-      <div className="flex justify-center items-center bg-white">
+      <div className="flex items-center justify-center bg-white">
         <Image
           src={image.src}
           width={100}
           height={100}
           alt={image.alt}
-          className="w-20 h-auto mt-3"
+          className="mt-3 h-auto w-20"
         />
       </div>
     </div>
@@ -53,16 +55,19 @@ const InfoLinkList = ({
   email,
   phone,
   address,
-}: Pick<Introduction, "github" | "email" | "phone" | "address">) => {
+}: Pick<Introduction, 'github' | 'email' | 'phone' | 'address'>) => {
   return (
-    <p className="flex flex-wrap justify-center max-w-sm gap-x-2 mt-3 text-center text-sm">
-      <InfoLink label={github.split("https://")[1]} href={github} />
+    <p className="mt-3 flex max-w-sm flex-wrap justify-center gap-x-2 text-center text-sm">
+      <InfoLink label={github.split('https://')[1]} href={github} />
       <InfoLink
         label={email}
         href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`}
       />
       <InfoLink label={phone} href={`tel:${phone}`} />
-      <InfoLink label={address} href={`https://map.naver.com/p/search/${address}`} />
+      <InfoLink
+        label={address}
+        href={`https://map.naver.com/p/search/${address}`}
+      />
     </p>
   );
 };

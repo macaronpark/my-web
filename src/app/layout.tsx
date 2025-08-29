@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
-import NavBar from "@/app/NavBar";
-import Nav from "@/app/Nav";
-import { links } from "./data";
-import "@/app/globals.css";
+import type { Metadata } from 'next';
+import { Noto_Sans_KR } from 'next/font/google';
+import NavBar from '@/app/NavBar';
+import Nav from '@/app/Nav';
+import { links } from './data';
+import '@/app/globals.css';
 
 export const metadata: Metadata = {
-  title: "박수지",
-  description: "박수지의 웹에 오신걸 환영합니다.",
+  title: '박수지',
+  description: '박수지의 웹에 오신걸 환영합니다.',
 };
 
 const notoSansKR = Noto_Sans_KR({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "900"],
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '900'],
 });
 
 export default function RootLayout({
@@ -22,8 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${notoSansKR.className} antialiased min-h-svh`}>
-        <header className="flex flex-col items-center sticky top-0 z-10">
+      <body className={`${notoSansKR.className} min-h-svh antialiased`}>
+        <header className="sticky top-0 z-10 flex flex-col items-center">
           <NavBar>
             {links.map((link) => (
               <Nav key={link.href} {...link} />

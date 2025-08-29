@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import clsx from "clsx";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { links } from "./data";
+import clsx from 'clsx';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { links } from './data';
 
 type Nav = (typeof links)[number];
 
 export default function Nav({ title, href, src }: Nav) {
   const cn = getClassName({ isCurrent: usePathname() === href });
 
-  if (title === "홈") {
+  if (title === '홈') {
     return <HomeNav title={title} href={href} src={src} cn={cn} />;
   }
 
@@ -24,13 +24,16 @@ export default function Nav({ title, href, src }: Nav) {
 }
 
 const getClassName = ({ isCurrent }: { isCurrent: boolean }) => {
-  return clsx("flex items-center gap-1", isCurrent ? "win95-nav-current" : "win95-nav");
+  return clsx(
+    'flex items-center gap-1',
+    isCurrent ? 'win95-nav-current' : 'win95-nav',
+  );
 };
 
 const HomeNav = ({ title, href, src, cn }: Nav & { cn: string }) => {
   return (
     <>
-      <Link href={href} className={clsx(cn, "font-semibold")}>
+      <Link href={href} className={clsx(cn, 'font-semibold')}>
         <NavImage src={src} title={title} />
         {title}
       </Link>
@@ -41,10 +44,12 @@ const HomeNav = ({ title, href, src, cn }: Nav & { cn: string }) => {
 
 const HomeNavDivider = () => {
   return (
-    <div className="w-1 m-0.5 border-2 border-gray-400 border-l-win95-border-light border-t-win95-border-light" />
+    <div className="border-l-win95-border-light border-t-win95-border-light m-0.5 w-1 border-2 border-gray-400" />
   );
 };
 
-const NavImage = ({ src, title }: Pick<Nav, "src" | "title">) => {
-  return <Image src={src} width={20} height={20} alt={title} className="size-5" />;
+const NavImage = ({ src, title }: Pick<Nav, 'src' | 'title'>) => {
+  return (
+    <Image src={src} width={20} height={20} alt={title} className="size-5" />
+  );
 };

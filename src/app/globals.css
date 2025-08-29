@@ -1,7 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 body {
-  background-image: url("/sky-tile.gif");
+  background-image: url('/sky-tile.gif');
 
   /* 한국어 문장을 단어 단위로 줄바꿈 */
   word-break: keep-all;
@@ -36,23 +36,18 @@ body {
 
 @layer components {
   .win95-nav {
-    @apply min-w-fit px-2 py-0.5 text-sm 
-            bg-win95-lightgray hover:bg-win95-lightgray-hover
-            bevel-raised inset-shadow-[-2px_-2px_rgba(0,0,0,0.15)];
+    @apply bg-win95-lightgray hover:bg-win95-lightgray-hover bevel-raised min-w-fit px-2 py-0.5 text-sm inset-shadow-[-2px_-2px_rgba(0,0,0,0.15)];
   }
   .win95-nav-current {
-    @apply min-w-fit px-2 py-0.5 text-sm 
-            bg-win95-lightgray hover:bg-win95-lightgray-hover
-            bevel-sunken inset-shadow-[2px_2px_rgba(0,0,0,0.125)] brightness-95;
+    @apply bg-win95-lightgray hover:bg-win95-lightgray-hover bevel-sunken min-w-fit px-2 py-0.5 text-sm inset-shadow-[2px_2px_rgba(0,0,0,0.125)] brightness-95;
   }
   .win95-panel-frame {
-    @apply font-semibold text-sm bg-win95-lightgray 
-            bevel-raised inset-shadow-[-2px_-2px_rgba(0,0,0,0.15)];
+    @apply bg-win95-lightgray bevel-raised text-sm font-semibold inset-shadow-[-2px_-2px_rgba(0,0,0,0.15)];
   }
   .win95-panel-title {
-    @apply px-2 py-0.5 bg-win95-blue text-white;
+    @apply bg-win95-blue px-2 py-0.5 text-white;
   }
   .win95-panel-body {
-    @apply m-0.5 p-2 bg-white;
+    @apply m-0.5 bg-white p-2;
   }
 }
