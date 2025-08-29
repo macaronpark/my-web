@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
@@ -7,10 +7,7 @@ type Props = {
 export default function NavBar({ children }: Props) {
   return (
     <nav
-      className={`
-        flex flex-wrap justify-start gap-0.5 w-full px-1 py-0.5 
-        bg-win95-lightgray bevel-raised border-l-0 border-r-0
-      `}
+      className={`bg-win95-lightgray bevel-raised flex w-full flex-wrap justify-start gap-0.5 border-r-0 border-l-0 px-1 py-0.5`}
     >
       {children}
     </nav>

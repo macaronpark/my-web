@@ -1,4 +1,4 @@
-import type { Welcome } from "../type";
+import type { Welcome } from '../type';
 
 export default function Welcome({ contents }: { contents: Welcome }) {
   return (
