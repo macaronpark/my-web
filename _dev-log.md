@@ -1,3 +1,29 @@
+## 25-08-27-수
+
+문제 1.
+export type Nav = (typeof links)[number]; 일 때,
+
+<Nav key={link.href} title={link.title} href={link.href} src={link.src} /> => 에러
+<Nav key={link.href} {...link} /> => 통과
+
+---
+
+문제 2.
+
+- tailwind 디자인 토큰 나눠본 방식이 효율적이지 않은 것 같다.
+- 겹치는 경우를 커버할 수 없고 중복이 생김
+
+해결? 토큰, 프리미티브, 컴포넌트 단계로 나눠서 적용
+
+! tailwind layer 이거 왜 써야하는지 이유를 알 것 같기도? global에서 .nav 이렇게 해두고 사용했는데 스타일 오버라이드가 아예 안됐던 경험
+
+---
+
+문제 3.
+⚠ The requested resource "/polar-bear.webp" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
+
+<br>
+
 ## 25-08-22-금
 
 - 라우트 설정
