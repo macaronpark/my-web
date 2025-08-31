@@ -1,3 +1,11 @@
+## 25-08-31-일
+
+1. lighthouse 검사 -> 스크린리더가 동일한 텍스트를 중복으로 읽는 현상 수정 (alt="", aria-hidden={true})
+2. `The requested resource "/polar-bear.webp" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.`
+   1. next.js image 가 어떤걸 최적화 해주는지 다시 확인해보기
+   2. 최적화 불필요한 이미지 유형별 이유 확인해보기 (https://nextjs.org/docs/app/api-reference/components/image#unoptimized)
+   3. vercel 비용 절감을 위한 처리 (https://vercel.com/docs/image-optimization/managing-image-optimization-costs?utm_source=chatgpt.com#reducing-usage)
+
 ## 25-08-27-수
 
 문제 1.
