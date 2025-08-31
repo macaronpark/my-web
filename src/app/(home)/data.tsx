@@ -1,4 +1,4 @@
-import { Introduction, TechStackItem, Welcome } from '@/app/(home)/type';
+import { Introduction, TechStackGroup, Welcome } from '@/app/(home)/type';
 
 const DOMAIN = 'suzypark.dev';
 
@@ -82,4 +82,4 @@ export const techStack = [
       { name: 'Notion', src: `${techStackImageDir}/notion.svg` },
     ],
   },
-] satisfies Readonly<TechStackItem[]>;
+] satisfies Readonly<TechStackGroup[]>;

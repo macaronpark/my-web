@@ -1,13 +1,17 @@
 import Image from 'next/image';
 import { PT_Sans } from 'next/font/google';
-import type { TechStackItem } from '../type';
+import type { TechStackGroup, TechStackItem } from '../type';
 
 const ptSans = PT_Sans({
   subsets: ['latin'],
   weight: ['400'],
 });
 
-export default function TechStack({ contents }: { contents: TechStackItem[] }) {
+export default function TechStack({
+  contents,
+}: {
+  contents: TechStackGroup[];
+}) {
   return (
     <section className="win95-panel-frame">
       <h2 className="win95-panel-title flex items-center gap-1">
@@ -30,20 +34,11 @@ export default function TechStack({ contents }: { contents: TechStackItem[] }) {
             </h3>
             <ul className="grid grid-cols-4 gap-y-1 sm:grid-cols-1">
               {stack.items.map((item) => (
-                <li
+                <TechStackItem
                   key={item.name}
-                  className="flex w-18 flex-col items-center gap-0.5"
-                >
-                  <Image
-                    src={item.src}
-                    width={40}
-                    height={40}
-                    alt={item.name}
-                  />
-                  <p className={`h-4 text-center leading-3 sm:h-6`}>
-                    {item.name}
-                  </p>
-                </li>
+                  name={item.name}
+                  src={item.src}
+                />
               ))}
             </ul>
           </li>
@@ -52,3 +47,12 @@ export default function TechStack({ contents }: { contents: TechStackItem[] }) {
     </section>
   );
 }
+
+const TechStackItem = ({ name, src }: TechStackItem) => {
+  return (
+    <li className="flex w-18 flex-col items-center gap-0.5">
+      <Image src={src} width={40} height={40} alt="" aria-hidden={true} />
+      <p className={`h-4 text-center leading-3 sm:h-6`}>{name}</p>
+    </li>
+  );
+};

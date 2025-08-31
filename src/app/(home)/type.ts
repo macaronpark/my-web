@@ -17,7 +17,12 @@ export type Introduction = {
   address: string;
 };
 
-export type TechStackItem = {
+export type TechStackGroup = {
   category: string;
-  items: { name: string; src: string }[];
+  items: TechStackItem[];
+};
+
+export type TechStackItem = {
+  name: string;
+  src: string;
 };
