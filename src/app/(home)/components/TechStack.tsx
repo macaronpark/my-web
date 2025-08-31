@@ -50,7 +50,6 @@ export default function TechStack({
 }
 
 const TechStackItem = ({ name, src }: TechStackItem) => {
-
   return (
     <li className="flex w-18 flex-col items-center gap-0.5">
       <Image
