@@ -44,6 +44,7 @@ const Banner = ({
           height={100}
           alt={image.alt}
           className="mt-3 h-auto w-20"
+          unoptimized={image.unoptimized}
         />
       </div>
     </div>

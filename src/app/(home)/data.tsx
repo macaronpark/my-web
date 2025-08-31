@@ -14,6 +14,7 @@ export const introduction = {
   image: {
     src: '/polar-bear.webp',
     alt: '천천히 걸어오는 북극곰',
+    unoptimized: true,
   },
   github: 'https://github.com/macaronpark',
   email: process.env.NEXT_PUBLIC_EMAIL ?? '',
@@ -50,7 +51,7 @@ export const techStack = [
       { name: 'Axios', src: `${techStackImageDir}/axios.svg` },
       {
         name: 'TanStack Query',
-        src: `${techStackImageDir}/tanstack-query.png`,
+        src: `${techStackImageDir}/tanstack-query.avif`,
       },
     ],
   },
@@ -58,7 +59,7 @@ export const techStack = [
     category: '테스트',
     items: [
       { name: 'Vitest', src: `${techStackImageDir}/vitest.svg` },
-      { name: 'RTL', src: `${techStackImageDir}/rtl.png` },
+      { name: 'RTL', src: `${techStackImageDir}/rtl.avif` },
       { name: 'MSW', src: `${techStackImageDir}/msw.svg` },
     ],
   },

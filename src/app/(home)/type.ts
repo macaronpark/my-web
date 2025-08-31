@@ -10,6 +10,7 @@ export type Introduction = {
   image: {
     src: string;
     alt: string;
+    unoptimized: boolean;
   };
   github: string;
   email: string;

@@ -21,6 +21,7 @@ export default function TechStack({
           height={16}
           alt="폴더"
           className="size-4"
+          unoptimized={true}
         />
         <span>Tech stack</span>
       </h2>
@@ -51,8 +52,15 @@ export default function TechStack({
 const TechStackItem = ({ name, src }: TechStackItem) => {
   return (
     <li className="flex w-18 flex-col items-center gap-0.5">
-      <Image src={src} width={40} height={40} alt="" aria-hidden={true} />
-      <p className={`h-4 text-center leading-3 sm:h-6`}>{name}</p>
+      <Image
+        src={src}
+        width={40}
+        height={40}
+        alt=""
+        aria-hidden={true}
+        unoptimized={src.includes(".svg")}
+      />
+      <p className="h-4 text-center leading-3 sm:h-6">{name}</p>
     </li>
   );
 };
