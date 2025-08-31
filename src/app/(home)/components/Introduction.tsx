@@ -58,7 +58,7 @@ const InfoLinkList = ({
   address,
 }: Pick<Introduction, 'github' | 'email' | 'phone' | 'address'>) => {
   return (
-    <p className="mt-3 flex max-w-sm flex-wrap justify-center gap-x-2 text-center text-sm">
+    <p className="mt-3 flex max-w-lg flex-wrap justify-center gap-x-2 text-center">
       <InfoLink label={github.split('https://')[1]} href={github} />
       <InfoLink
         label={email}
@@ -75,9 +75,13 @@ const InfoLinkList = ({
 
 const InfoLink = ({ label, href }: { label: string; href: string }) => {
   return (
-    <a target="_blank" rel="noopener noreferrer" href={href}>
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={href}
+      className="after:content-['_|_'] last:after:content-none"
+    >
       <span className="text-[#0000ee] underline">{label}</span>
-      <span> | </span>
     </a>
   );
 };
