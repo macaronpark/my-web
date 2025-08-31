@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 body {
-  background-image: url('/sky-tile.gif');
+  background-image: url('/sky-tile.avif');
 
   /* 한국어 문장을 단어 단위로 줄바꿈 */
   word-break: keep-all;
