@@ -57,6 +57,7 @@ const NavImage = ({ src }: Pick<Nav, 'src'>) => {
       alt=""
       aria-hidden={true}
       className="size-5"
+      unoptimized={true}
     />
   );
 };

@@ -14,6 +14,7 @@ export default function NotFound() {
               height={40}
               alt="Tip icon"
               className="size-10"
+              unoptimized={true}
             />
             <div>
               <h3 className="text-xl font-bold">404 Not Found</h3>
