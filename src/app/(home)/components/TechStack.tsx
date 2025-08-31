@@ -51,7 +51,7 @@ export default function TechStack({
 const TechStackItem = ({ name, src }: TechStackItem) => {
   return (
     <li className="flex w-18 flex-col items-center gap-0.5">
-      <Image src={src} width={40} height={40} alt="" aria-hidden />
+      <Image src={src} width={40} height={40} alt="" aria-hidden={true} />
       <p className={`h-4 text-center leading-3 sm:h-6`}>{name}</p>
     </li>
   );
