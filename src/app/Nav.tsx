@@ -17,7 +17,7 @@ export default function Nav({ title, href, src }: Nav) {
 
   return (
     <Link href={href} className={cn}>
-      <NavImage src={src} title={title} />
+      <NavImage src={src} />
       {title}
     </Link>
   );
@@ -34,7 +34,7 @@ const HomeNav = ({ title, href, src, cn }: Nav & { cn: string }) => {
   return (
     <>
       <Link href={href} className={clsx(cn, 'font-semibold')}>
-        <NavImage src={src} title={title} />
+        <NavImage src={src} />
         {title}
       </Link>
       <HomeNavDivider />
@@ -48,8 +48,15 @@ const HomeNavDivider = () => {
   );
 };
 
-const NavImage = ({ src, title }: Pick<Nav, 'src' | 'title'>) => {
+const NavImage = ({ src }: Pick<Nav, 'src'>) => {
   return (
-    <Image src={src} width={20} height={20} alt={title} className="size-5" />
+    <Image
+      src={src}
+      width={20}
+      height={20}
+      alt=""
+      aria-hidden
+      className="size-5"
+    />
   );
 };
